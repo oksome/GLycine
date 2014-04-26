@@ -59,7 +59,7 @@ def renderScene():
     world.draw()
 
     cam.move()
-    #world.move()
+    world.move()
 
     # gluLookAt(
     #     cos(since/3.) * 20, sin(since/3.) * 20, r,
