@@ -79,6 +79,7 @@ def keyPressed(key, mouseX, mouseY):
     global dr
     global cam_speed
     global cam_rotation
+    key = key.decode('utf-8')
     print(key, mouseX, mouseY)
     if key == 's':
         cam.dz += 0.1
@@ -87,7 +88,7 @@ def keyPressed(key, mouseX, mouseY):
     elif key == 'q':
         cam.rx -= 0.2
     elif key == 'x':
-        cam.ry += 0.2
+        cam.rx += 0.2
     elif key == '\x1b':  # ESC
         import sys
         sys.exit()
@@ -98,14 +99,16 @@ def keyUp(key, mouseX, mouseY):
     global dr
 
 
-glutInit()
+import sys
+#glutInit()
+glutInit(sys.argv)  # Python3: needs arguments
 # glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH)
 glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH | GLUT_MULTISAMPLE)
 # glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_ALPHA)
 glutInitWindowPosition(100, 100)
 glutInitWindowSize(800, 600)
 
-mainWindow = glutCreateWindow("Garden")
+mainWindow = glutCreateWindow(b"Garden")
 
 glutDisplayFunc(renderScene)
 glutIdleFunc(renderScene)
