@@ -67,7 +67,7 @@ cdef class Camera:
         self.dx, self.dy, self.dz = rotation if rotation else (0.0, 0.0, 0.0)
 
     cpdef use(self):
-        # gl.glRotated(self.ox, 1, 0, 0)
+        gl.glRotated(self.ox, 1, 0, 0)
         # gl.glRotated(self.oy, 0, 1, 0)
         gl.glTranslatef(self.x, self.y, self.z)
 
@@ -75,3 +75,6 @@ cdef class Camera:
         self.x += self.dx
         self.y += self.dy
         self.z += self.dz
+        self.ox += self.rx
+        self.oy += self.ry
+        self.oz += self.rz
