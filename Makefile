@@ -13,4 +13,5 @@ clean:
 	rm -fr build/*
 	rm -fr run/*.so
 	rm pyx/glfw_test.c
+	rm pyx/model.c
 
