@@ -7,8 +7,11 @@ setup(
     ext_modules=[
         Extension("model", ["pyx/model.pyx"]),
         Extension('glfw_test', ['pyx/glfw_test.pyx'],
-            include_dirs=['pyx'],
-            libraries=['glfw3', 'glew'],
+            #libraries=['glfw', 'glew'],
+            libraries=['glfw'],
+            #extra_compile_args=['-I/usr/local/include/GLFW'],
+            extra_compile_args=['/usr/lib/x86_64-linux-gnu/'],
+            #extra_link_args=['-L/usr/local/lib'],
             )
         ],
 )

@@ -1,4 +1,4 @@
-cdef extern from "OpenGL/gl.h":
+cdef extern from "GL/gl.h":
     ctypedef int            GLint
     ctypedef unsigned int   GLenum
     ctypedef float          GLfloat
